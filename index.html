@@ -103,7 +103,6 @@
             <li>✅ Bibit sehat dan berkualitas tinggi</li>
             <li>✅ Mudah dibudidayakan di berbagai lingkungan</li>
             <li>✅ Kaya protein, cocok untuk konsumsi atau bisnis</li>
-            <li>✅ Harga bersaing dan pengiriman aman ke seluruh Indonesia</li>
         </ul>
         </section>
 
@@ -150,10 +149,6 @@
 <body>
     <div class="container">
         <h2>Pemesanan Lobster Air Tawar Ecaocelobster_farm</h2>
-        <div class="input-group">
-            <label for="inch3">Paket 3 Inch (160rb/paket, 9 ekor)</label>
-            <input type="number" id="inch3" value="0" min="0">
-        </div>
         <div class="input-group">
             <label for="inch4">Paket 4 Inch (180rb/paket, 9 ekor)</label>
             <input type="number" id="inch4" value="0" min="0">
@@ -213,11 +208,10 @@
     
     <script>
         function hitungHarga() {
-            let paket3 = document.getElementById("inch3").value;
             let paket4 = document.getElementById("inch4").value;
             let paket5 = document.getElementById("inch5").value;
             let paket6 = document.getElementById("gnd").value;
-            let totalHarga = (paket3 * 160000) + (paket4 * 180000) + (paket5 * 200000) + (paket6 * 20000);
+            let totalHarga = (paket4 * 180000) + (paket5 * 200000) + (paket6 * 20000);
             document.getElementById("hasil-harga").innerText = "Total Harga: Rp " + totalHarga.toLocaleString();
             document.getElementById("checkout").style.display = totalHarga > 0 ? "block" : "none";
         }
@@ -230,13 +224,11 @@
             let nama = document.getElementById("nama").value;
             let alamat = document.getElementById("alamat").value;
             let pembayaran = document.getElementById("pembayaran").value;
-            let paket3 = document.getElementById("inch3").value;
             let paket4 = document.getElementById("inch4").value;
             let paket5 = document.getElementById("inch5").value;
             let paket6 = document.getElementById("gnd").value;
-            let totalHarga = (paket3 * 160000) + (paket4 * 180000) + (paket5 * 200000) + (paket6 * 20000);
+            let totalHarga = (paket4 * 180000) + (paket5 * 200000) + (paket6 * 20000);
             let pesan = `Halo, saya ingin membeli:
-- ${paket3} Paket 3 Inch
 - ${paket4} Paket 4 Inch
 - ${paket5} Paket 5 Inch
 - ${paket6} Gendong telur
