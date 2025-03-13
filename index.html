@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jual Lobster Air Tawar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #e0e5e7;
+        }
+
+        header {
+            background: #b9d0d4;
+            color: white;
+            padding: 20px;
+        }
+
+        .gallery, .description, .content {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-container img {
+            width: 50%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .lightbox p {
+            color: white;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🐟 Jual Lobster Air Tawar 🦞</h1>
+        <p>Indukan & Bibit Sehat | Harga Terjangkau </p>
+    </header>
+
+    <section class="gallery">
+        <h2>Galeri Lobster</h2>
+        <div class="image-container">
+            <img src="lobster1.jpg" alt="Lobster Air Tawar" onclick="openLightbox('lobster1.jpg', 'Lobster air tawar berkualitas, siap budidaya.')">
+        </div>
+    </section>
+
+    <section class="description">
+        <h2>Kenapa Harus Memilih Lobster Kami?</h2>
+        <ul>
+            <li>✅ Indukan unggul dengan pertumbuhan cepat</li>
+            <li>✅ Bibit sehat dan berkualitas tinggi</li>
+            <li>✅ Mudah dibudidayakan di berbagai lingkungan</li>
+            <li>✅ Kaya protein, cocok untuk konsumsi atau bisnis</li>
+            <li>✅ Harga bersaing dan pengiriman aman ke seluruh Indonesia</li>
+        </ul>
+        </section>
+
+    <section class="content" id="dynamicContent">
+        <!-- Halaman pembayaran akan dimuat di sini -->
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" src="" alt="">
+        <p id="lightbox-text"></p>
+    </div>
+
+    <script>
+        function openLightbox(imageSrc, description) {
+            document.getElementById("lightbox-img").src = imageSrc;
+            document.getElementById("lightbox-text").innerText = description;
+            document.getElementById("lightbox").style.display = "flex";
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+
+            </script>
+
+</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lobster Store</title>
+    <style>
+        .container { max-width: 600px; margin: auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        .input-group { margin-bottom: 15px; text-align: left; }
+        label { font-weight: bold; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 5px; }
+        button { width: 100%; padding: 10px; background: #007bff; color: white; border: none; cursor: pointer; border-radius: 5px; }
+        button:hover { background: #0056b3; }
+        .rating-container { display: flex; justify-content: space-between; margin-top: 20px; }
+        .rating-box { background: #fff3cd; padding: 10px; border-radius: 5px; }
+        .checkout-form { margin-top: 20px; text-align: left; display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Pemesanan Lobster Air Tawar Ecaocelobster_farm</h2>
+        <div class="input-group">
+            <label for="inch3">Paket 3 Inch (160rb/paket, 9 ekor)</label>
+            <input type="number" id="inch3" value="0" min="0">
+        </div>
+        <div class="input-group">
+            <label for="inch4">Paket 4 Inch (180rb/paket, 9 ekor)</label>
+            <input type="number" id="inch4" value="0" min="0">
+        </div>
+        <div class="input-group">
+            <label for="inch5">Paket 5 Inch (200rb/paket, 9 ekor)</label>
+            <input type="number" id="inch5" value="0" min="0">
+        </div>
+        <div class="input-group">
+            <label for="gnd">Indukan Gendong Telur (20rb/ekor)</label>
+            <input type="number" id="gnd" value="0" min="0">
+        </div>
+        <button onclick="hitungHarga()">Hitung Total</button>
+        <p id="hasil-harga"></p>
+        <button id="checkout" style="display:none;" onclick="tampilkanCheckout()">Lanjut ke Pemesanan</button>
+    </div>
+    
+    <div class="container checkout-form" id="checkout-form">
+        <h2>Formulir Pemesanan</h2>
+        <div class="input-group">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" placeholder="Masukkan nama">
+        </div>
+        <div class="input-group">
+            <label for="alamat">Alamat</label>
+            <input type="text" id="alamat" placeholder="Masukkan alamat">
+        </div>
+        <div class="input-group">
+            <label for="pembayaran">Metode Pembayaran</label>
+            <select id="pembayaran">
+                <option value="transfer">Transfer Bank</option>
+                <option value="cod">COD</option>
+            </select>
+        </div>
+        <button onclick="checkoutWA()">Pesan Sekarang</button>
+    </div>
+    
+    <div class="container">
+        <h2>Rating Produk</h2>
+        <select id="rating-input">
+            <option value="5">⭐️⭐️⭐️⭐️⭐️ (5 Bintang)</option>
+            <option value="4">⭐️⭐️⭐️⭐️ (4 Bintang)</option>
+            <option value="3">⭐️⭐️⭐️ (3 Bintang)</option>
+            <option value="2">⭐️⭐️ (2 Bintang)</option>
+            <option value="1">⭐️ (1 Bintang)</option>
+        </select>
+        <textarea id="review-input" placeholder="Tulis ulasan Anda..."></textarea>
+        <button onclick="tambahRating()">Tambah Rating</button>
+        <div class="rating-container">
+            <div class="rating-box"><h3>⭐️⭐️⭐️⭐️⭐️</h3><p id="bintang5">0 ulasan</p></div>
+            <div class="rating-box"><h3>⭐️⭐️⭐️⭐️</h3><p id="bintang4">0 ulasan</p></div>
+            <div class="rating-box"><h3>⭐️⭐️⭐️</h3><p id="bintang3">0 ulasan</p></div>
+            <div class="rating-box"><h3>⭐️⭐️</h3><p id="bintang2">0 ulasan</p></div>
+            <div class="rating-box"><h3>⭐️</h3><p id="bintang1">0 ulasan</p></div>
+        </div>
+    </div>
+    
+    <script>
+        function hitungHarga() {
+            let paket3 = document.getElementById("inch3").value;
+            let paket4 = document.getElementById("inch4").value;
+            let paket5 = document.getElementById("inch5").value;
+            let paket6 = document.getElementById("gnd").value;
+            let totalHarga = (paket3 * 160000) + (paket4 * 180000) + (paket5 * 200000) + (paket6 * 20000);
+            document.getElementById("hasil-harga").innerText = "Total Harga: Rp " + totalHarga.toLocaleString();
+            document.getElementById("checkout").style.display = totalHarga > 0 ? "block" : "none";
+        }
+
+        function tampilkanCheckout() {
+            document.getElementById("checkout-form").style.display = "block";
+        }
+
+        function checkoutWA() {
+            let nama = document.getElementById("nama").value;
+            let alamat = document.getElementById("alamat").value;
+            let pembayaran = document.getElementById("pembayaran").value;
+            let paket3 = document.getElementById("inch3").value;
+            let paket4 = document.getElementById("inch4").value;
+            let paket5 = document.getElementById("inch5").value;
+            let paket6 = document.getElementById("gnd").value;
+            let totalHarga = (paket3 * 160000) + (paket4 * 180000) + (paket5 * 200000) + (paket6 * 20000);
+            let pesan = `Halo, saya ingin membeli:
+- ${paket3} Paket 3 Inch
+- ${paket4} Paket 4 Inch
+- ${paket5} Paket 5 Inch
+- ${paket6} Gendong telur
+Total Harga: Rp ${totalHarga.toLocaleString()}
+Nama: ${nama}
+Alamat: ${alamat}
+Metode Pembayaran: ${pembayaran}`;
+            let waLink = "https://wa.me/6287764765562?text=" + encodeURIComponent(pesan);
+            window.location.href = waLink;
+        }
+
+        let ratingData = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
+        function tambahRating() {
+            let rating = document.getElementById("rating-input").value;
+            ratingData[rating]++;
+            document.getElementById(`bintang${rating}`).innerText = ratingData[rating] + " ulasan";
+        }
+    </script>
+</body>
+</html>
