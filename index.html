@@ -150,16 +150,24 @@
     <div class="container">
         <h2>Pemesanan Lobster Air Tawar Ecaocelobster_farm</h2>
         <div class="input-group">
-            <label for="inch4">Paket 4 Inch (180rb/paket, 9 ekor)</label>
+            <label for="inch4">Paket 4 Inch (153rb/paket, 9 ekor)</label>
             <input type="number" id="inch4" value="0" min="0">
         </div>
         <div class="input-group">
-            <label for="inch5">Paket 5 Inch (200rb/paket, 9 ekor)</label>
+            <label for="inch5">Paket 5 Inch (180rb/paket, 9 ekor)</label>
             <input type="number" id="inch5" value="0" min="0">
         </div>
         <div class="input-group">
             <label for="gnd">Indukan Gendong Telur (20rb/ekor)</label>
             <input type="number" id="gnd" value="0" min="0">
+        </div>
+        <div class="input-group">
+            <label for="bbt">Bibit Ukuran 2 Inch (3rb/ekor)</label>
+            <input type="number" id="bbt" value="0" min="0">
+        </div>
+        <div class="input-group">
+            <label for="bbt1">Bibit Ukuran 3 Inch (6rb/ekor)</label>
+            <input type="number" id="bbt1" value="0" min="0">
         </div>
         <button onclick="hitungHarga()">Hitung Total</button>
         <p id="hasil-harga"></p>
@@ -211,7 +219,9 @@
             let paket4 = document.getElementById("inch4").value;
             let paket5 = document.getElementById("inch5").value;
             let paket6 = document.getElementById("gnd").value;
-            let totalHarga = (paket4 * 180000) + (paket5 * 200000) + (paket6 * 20000);
+            let paket7 = document.getElementById("bbt").value;
+            let paket8 = document.getElementById("bbt1").value;
+            let totalHarga = (paket4 * 153000) + (paket5 * 180000) + (paket6 * 20000) + (paket7 * 3000) + (paket6 * 6000);
             document.getElementById("hasil-harga").innerText = "Total Harga: Rp " + totalHarga.toLocaleString();
             document.getElementById("checkout").style.display = totalHarga > 0 ? "block" : "none";
         }
@@ -227,11 +237,15 @@
             let paket4 = document.getElementById("inch4").value;
             let paket5 = document.getElementById("inch5").value;
             let paket6 = document.getElementById("gnd").value;
-            let totalHarga = (paket4 * 180000) + (paket5 * 200000) + (paket6 * 20000);
+            let paket7 = document.getElementById("bbt").value;
+            let paket8 = document.getElementById("bbt1").value;
+            let totalHarga = (paket4 * 153000) + (paket5 * 180000) + (paket6 * 20000) + (paket7 * 3000) + (paket8 * 6000);
             let pesan = `Halo, saya ingin membeli:
 - ${paket4} Paket 4 Inch
 - ${paket5} Paket 5 Inch
 - ${paket6} Gendong telur
+- ${paket7} Bibit Ukuran 2 Inch
+- ${paket8} GBibit Ukuran 3 Inch
 Total Harga: Rp ${totalHarga.toLocaleString()}
 Nama: ${nama}
 Alamat: ${alamat}
